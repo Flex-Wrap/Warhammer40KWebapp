@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://flexwrap.github.io/Warhammer40KWebapp/warpdrive",
+  "homepage": "https://flexwrap.github.io/Warhammer40KWebapp",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
