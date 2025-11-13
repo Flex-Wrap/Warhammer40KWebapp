@@ -6,7 +6,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/Warhammer40KWebapp/warpdrive">
+    <BrowserRouter basename="/Warhammer40KWebapp/">
       <App />
     </BrowserRouter>
   </StrictMode>,
