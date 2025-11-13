@@ -1,0 +1,56 @@
+/* Navbar styles (moved out of index.css) */
+.navbar {
+  --navbar-height: 90px;
+  height: var(--navbar-height);
+  padding: 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* explicit, no auto trick */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-navbar-bg);
+  z-index: 1000;
+}
+
+.navbar-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+/* hover glow for SVG logo */
+.navbar-logo img {
+  transition: transform 160ms ease, filter 180ms ease;
+  will-change: transform, filter;
+}
+
+.navbar-logo img:hover,
+.navbar-logo img:focus {
+  transform: scale(1.04);
+  /* neutral, subtle white glow */
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.45)) drop-shadow(0 0 3px rgba(255,255,255,0.18));
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.navbar-links h4 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 140%;
+}
+
+.nav-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text-primary);
+}

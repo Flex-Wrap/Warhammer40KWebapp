@@ -1,0 +1,27 @@
+.news-hero {
+  height: 475px;
+}
+
+.happening-now-container {
+  display: flex;
+  gap: 24px;
+}
+
+.happening-now-image {
+  width: 40%;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.happening-now-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.releases-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

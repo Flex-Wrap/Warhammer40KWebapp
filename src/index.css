@@ -1,68 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@400;700&family=Bitter:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Backgrounds */
+  --color-primary-bg: #0b1e32; /* Deep Space Blue */
+  --color-item-bg: #102b44; /* Navy Slate */
+  --color-navbar-bg: #081624; /* Cosmic Black */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Accents */
+  --color-accent: #00a7e1; /* Cyan Glow */
+  --color-secondary-accent: #2ec973; /* Neon Green */
+  --color-divider: #1e3a54; /* Dim Blue */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Alerts */
+  --color-alert-warning: #ffb547; /* Amber Pulse */
+  --color-alert-error: #e94f37; /* Crimson Beam */
+
+  /* Text */
+  --color-text-primary: #ededed; /* White */
+  --color-text-secondary: #8da4b8; /* Cool Gray */
+  --navbar-height: 90px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Root setup for flex layout */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 body {
-  margin: 0;
+  font-family: "Bitter", serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-primary-bg);
+}
+
+/* Navbar */
+.navbar {
+  height: var(--navbar-height);
+  background-color: var(--color-navbar-bg);
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Page*/
+.page {
+  padding-top: var(--navbar-height);
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 80px 32px 80px;
+}
+
+/*scrollable, need to remember I made it with parent responsible for fixed height */
+.scrollable-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.scrollable-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+.aesthetic {
+  font-family: "Anton", sans-serif;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 48px;
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+  font-size: 36px;
+  line-height: 1.2;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h3 {
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.aesthetic {
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 4px 8px;
+}
+
+.micro {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.regular {
+  font-family: "Antonio", sans-serif;
+  font-size: 20px;
+  line-height: 1.5; /* replaced auto */
+}
+
+/* Buttons */
+button {
+  border: 2px solid var(--color-divider);
+  background-color: var(--color-item-bg);
+  color: var(--color-text-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  border-radius: 0;
+  padding: 12px 28px;
+  min-width: 140px;
+}
+
+button.cta {
+  background-color: var(--color-accent);
+}
+
+button.green-button {
+  border-color: var(--color-secondary-accent);
+}
+
+button.red-button {
+  border-color: var(--color-alert-error);
 }
