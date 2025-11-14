@@ -10,6 +10,7 @@ interface HeroProps {
   text?: string;
   description?: string;
   className?: string;
+  alt?: string;
 }
 
 export default function Hero({
@@ -21,6 +22,7 @@ export default function Hero({
   text,
   description,
   className = "",
+  alt,
 }: HeroProps) {
   const [dimensions, setDimensions] = useState<{ width: number; height: number } | null>(null);
 
@@ -37,6 +39,7 @@ export default function Hero({
   return (
     <section
       className={`hero ${className}`}
+      aria-label={alt}
       style={{
         backgroundImage: background ? `url(${background})` : undefined,
         maxWidth: dimensions ? `${dimensions.width}px` : undefined,

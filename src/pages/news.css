@@ -1,5 +1,20 @@
 .news-hero {
   height: 475px;
+  padding-bottom: 20px;
+}
+
+.article{
+    padding-top: 20px;
+}
+
+.happening-now {
+  background-color: var(--color-text-primary);
+}
+
+.happening-now .section-content p,
+.happening-now .section-content h2,
+.happening-now .section-content h3 {
+  color: var(--color-navbar-bg);
 }
 
 .happening-now-container {
